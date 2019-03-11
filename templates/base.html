@@ -1,0 +1,118 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v4.8.8, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/images/logo-122x122.png') }}"
+          type="image/x-icon">
+    <meta name="description" content="Web Site Builder Description">
+    <title>Bill Split Main</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/web/assets/mobirise-icons2/mobirise2.css') }}">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='assets/web/assets/mobirise-icons/mobirise-icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/tether/tether.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap-grid.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap-reboot.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/animatecss/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/dropdown/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/theme/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/mobirise/css/mbr-additional.css') }}"
+          type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/input.css') }}">
+</head>
+<body onload="showHideMenu()">
+<input type="hidden" id="csrf_token" value="{{ csrf_token() }}"/>
+<section class="menu cid-rb1bfyxmpC" once="menu" id="menu1-g">
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                        <span class="navbar-logo">
+                            <a href="/">
+                                 <img src="../static/assets/images/logo-122x122.png" alt="Mobirise" title=""
+                                      style="height: 3.8rem;">
+                            </a>
+                        </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="/">ONLINE PAYMENT POTRAL</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                <li class="nav-item dropdown open"><a class="nav-link link text-white dropdown-toggle display-4"
+                                                      href="https://mobirise.co" aria-expanded="true"
+                                                      data-toggle="dropdown-submenu">
+                    <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>
+                    Services
+                </a>
+                    <div class="dropdown-menu"><a class="text-white dropdown-item display-4"
+                                                  {% if session['logged_in'] %}href="/payment"
+                                                  {% else %}href="/loginpage"{% endif %}
+                                                  aria-expanded="false"><span
+                            class="mbri-cash mbr-iconfont mbr-iconfont-btn"></span>Pay</a><a
+                            class="text-white dropdown-item display-4" {% if session['logged_in'] %}href="/bill"
+                            {% else %}href="/loginpage"{% endif %} aria-expanded="false"><span
+                            class="mbri-users mbr-iconfont mbr-iconfont-btn"></span>Split</a><a
+                            class="text-white dropdown-item display-4" {% if session['logged_in'] %}href="/tracker"
+                            {% else %}href="/loginpage"{% endif %}
+                            aria-expanded="true"><span class="mbri-credit-card mbr-iconfont mbr-iconfont-btn"></span>Track</a><a
+                            class="text-white dropdown-item display-4" {% if session['logged_in'] %}href="/profilepage"
+                            {% else %}href="/loginpage"{% endif %}
+                            aria-expanded="true"><span class="mbri-smile-face mbr-iconfont mbr-iconfont-btn"></span>Profile</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="/">
+                        <span class="mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                        About Us
+                    </a>
+                </li>
+            </ul>
+            {% if not session['logged_in'] == True %}
+                <div class="navbar-buttons mbr-section-btn">
+                <a class="btn btn-sm btn-primary display-4" id="loginButton" href="/loginpage"><span
+                        class="mobi-mbri mobi-mbri-smile-face mbr-iconfont mbr-iconfont-btn"></span>Login/Signup</a>
+                <a class="btn btn-sm btn-secondary display-4" id="notificationButton" href="/">
+                <span class="mobi-mbri mobi-mbri-alert mbr-iconfont mbr-iconfont-btn"></span>
+            {% else %}
+                <div class="navbar-buttons mbr-section-btn">
+                <a class="btn btn-sm btn-primary display-4" id="logoutButton" onclick="validateLogout()"><span
+                        class="mobi-mbri mobi-mbri-smile-face mbr-iconfont mbr-iconfont-btn"></span>Logout</a>
+                <a class="btn btn-sm btn-secondary display-4" id="notificationButton" href="/">
+                <span class="mobi-mbri mobi-mbri-alert mbr-iconfont mbr-iconfont-btn"></span>
+            {% endif %}
+
+
+            Notifications</a></div>
+            </div>
+    </nav>
+</section>
+
+{% block content %}{% endblock %}
+
+<script src="{{ url_for('static', filename='assets/web/assets/jquery/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/tether/tether.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/popper/popper.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/smoothscroll/smooth-scroll.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/touchswipe/jquery.touch-swipe.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/viewportchecker/jquery.viewportchecker.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/parallax/jarallax.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/dropdown/js/script.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/theme/js/script.js') }}"></script>
+<script src="{{ url_for('static', filename='js/validator.js') }}"></script>
+<script src="{{ url_for('static', filename='js/service.js') }}"></script>
+<script src="{{ url_for('static', filename='js/loginTokenHandler.js') }}"></script>
+<input name="animation" type="hidden">
+</body>
+</html>

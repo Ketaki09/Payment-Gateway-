@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="engine"><a href="https://mobirise.info/g">how to build a site for free</a></section>
+    <section class="cid-rb1Xcn56GS mbr-fullscreen" data-bg-video="https://www.youtube.com/watch?v=ZbRxKnRmBUk"
+             id="header2-x">
+
+
+        <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(6, 137, 224);"></div>
+
+        <div class="container align-center">
+            <div class="row justify-content-md-center">
+                <div class="mbr-white col-md-10">
+                    <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">SHARE YOUR BILL!</h1>
+
+                    <p class="mbr-text pb-3 mbr-fonts-style display-7">Whether its Paying your Friends, or Recieving
+                        Payment from them, you can do them all from here!</p>
+                    <form name="shair">
+                        Amount:&nbsp
+                        <input type="text" name="money" class=css-input>&nbsp &nbsp
+                        <br><br>Payer Email &nbsp
+                        <input type="text" name="payer_id" class=css-input><br><br>
+                        <br>
+                    </form>
+                    <div class="mbr-section-btn"><a class="btn btn-md btn-secondary display-4"
+                                                    onclick="validateShareBill()">SEND REQUEST</a> <a
+                            class="btn btn-md btn-black display-4" href="{{ url_for('pending') }}">MAKE PAYMENT</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mbr-arrow hidden-sm-down" aria-hidden="true">
+            <a href="#next">
+                <i class="mbri-down mbr-iconfont"></i>
+            </a>
+        </div>
+    </section>
+
+{% endblock %}

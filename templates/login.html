@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="engine"><a href="https://mobirise.info/d">site maker</a></section>
+    <section class="header9 cid-rb1M5HQ8Kt mbr-fullscreen mbr-parallax-background" id="header9-k">
+        <div class="mbr-overlay" style="opacity: 0.4; background-color: rgb(6, 137, 224);">
+        </div>
+        <div class="container">
+            <div class="media-container-column mbr-white col-md-8">
+                <h1 class="mbr-section-title align-left mbr-bold pb-3 mbr-fonts-style display-1">
+                    SIGN UP!</h1>
+                <h3 class="mbr-section-subtitle align-left mbr-light pb-3 mbr-fonts-style display-5">
+                    Sign up now to start using this awesome platform!</h3>
+                <p class="mbr-text align-left pb-3 mbr-fonts-style display-5">
+                    &lt;Sign up form&gt;</p>
+                <form name="sign-in">
+                    First name:&nbsp
+                    <input type="text" name="firstname" class=css-input>&nbsp &nbsp
+                    Last name:&nbsp
+                    <input type="text" name="lastname" class=css-input><br><br>
+                    Email &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <input type="text" name="email" class=css-input>&nbsp &nbsp
+                    Card No: &nbsp&nbsp&nbsp&nbsp
+                    <input type="text" name="card_number" class=css-input><br><br>
+
+                    Expiry Month: &nbsp&nbsp&nbsp&nbsp
+                    <input type="text" name="card_expiry_month" class=css-input><br><br>
+                    Expiry Year: &nbsp&nbsp&nbsp&nbsp
+                    <input type="text" name="card_expiry_year" class=css-input><br><br>
+                    Name on Card: &nbsp&nbsp&nbsp&nbsp
+                    <input type="text" name="card_name" class=css-input><br><br>
+
+                    Phone:&nbsp &nbsp&nbsp&nbsp&nbsp
+                    <input type="text" name="phone" class=css-input>&nbsp &nbsp
+                    Password: &nbsp&nbsp&nbsp
+                    <input type="password" name="password" class=css-input><br><br>
+                    <!-- List box -->
+                    <div class="formRight">
+                        <span style="padding-right:0px">Question </span>
+
+                        <select id="Security Question" class="box2" name="Security Question">
+                            <option value="Question 1">Question 1</option>
+                            <option value="Question 2">Question 2</option>
+                            <option value="Question 3">Question 3</option>
+                        </select>
+                        &nbsp &nbsp Answer: &nbsp &nbsp <input type="text" name="answer" class=css-input>&nbsp &nbsp
+
+                    </div>
+                    <br>
+
+                    <div class="mbr-section-btn align-left"><a class="btn btn-md btn-primary display-4"
+                                                               onclick="validateSignUp()" type="submit">SIGN UP</a>
+                        <a class="btn btn-md btn-black display-4" href="login.html#header1-12">I ALREADY HAVE AN
+                            ACCOUNT</a></div>
+                </form>
+
+            </div>
+        </div>
+        <br>
+        <div class="mbr-arrow hidden-sm-down" aria-hidden="true">
+            <a href="#next">
+                <i class="mbri-down mbr-iconfont"></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="header1 cid-rb2123R5Rc" id="header1-12">
+
+
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="mbr-white col-md-10">
+                    <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1">LOGIN</h1>
+                    <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-5">&lt;Login
+                        Text&gt;</h3>
+                    <p class="mbr-text align-center pb-3 mbr-fonts-style display-5">
+                        &lt;Login form&gt;</p>
+                    <form name="login">
+                        <center><font color="black">Email:</font>&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp</center>
+                        <center><input type="text" name="email" class=css-input>
+                        <br><br>
+                        <center><font color="black">Password</font> &nbsp&nbsp &nbsp &nbsp</center>
+                        <center><input type="password" name="password" class=css-input>
+                        <br><br>
+                        <center><button type="button" onclick="sendAuthCode()">Authentication Code</button></center>
+                        <input type="text" name="code" class=css-input>
+                        <br>
+                    </form>
+                    <br>
+                    &nsbp
+                    <div class="mbr-section-btn align-center"><a class="btn btn-md btn-primary display-4"
+                                                                 onclick="validateLogIn()">&nbsp;LOG ME IN NOW! &nbsp;&nbsp;</a>
+                        <a class="btn btn-md btn-black display-4" href="forgotpassword">FORGOT PASSWORD</a></div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+{% endblock %}

@@ -1,0 +1,23 @@
+alter table users drop foreign key security_answer_cons;
+alter table users drop column security_ans_id;
+alter table users add column security_ans varchar(255) DEFAULT NULL;
+alter table transaction drop foreign key status_id_con;
+alter table transaction drop column status_id;
+alter table transaction add column status varchar(255);
+alter table transaction drop foreign key payment_id_con;
+alter table transaction change payment_id payment_id int(50) default null;
+alter table payments modify card_number varchar(255);
+alter table payments modify card_expiry_month int(50);
+alter table payments change card_expity_year card_expiry_year int(50);
+DROP TABLE IF EXISTS `clienttoken`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `clienttoken` (
+  `email` varchar(25) NOT NULL,
+  `ctoken` varchar(45) NOT NULL,
+  `ctime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `ccipher` varchar(60) NOT NULL,
+  PRIMARY KEY (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+Alter table users add column invalid_password int(50) default 0;

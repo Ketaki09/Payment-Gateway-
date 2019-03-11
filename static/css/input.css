@@ -1,0 +1,26 @@
+.css-input {
+     padding: 1px;
+     font-size: 15px;
+     border-width: 0px;
+     border-color: #CCCCCC;
+     background-color: #FFFFFF;
+     color: #000000;
+     border-style: solid;
+     border-radius: 14px;
+     box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+     text-shadow: 9px 18px 5px rgba(66,66,66,.84);
+}
+ .css-input:focus {
+     outline:none;
+}
+
+.formRight select {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 14px 14px 14px 14px;
+    box-shadow: 0 0 10px #E8E8E8 inset;
+    height: 27px;
+    margin: 0 0 0 25px;
+    padding: 0px;
+    width: 175px;
+}
